@@ -13,13 +13,12 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
-  var length = prompt("Please enter password length (8 - 128 characters)");
+  var passwordLength = prompt("Please enter password length (8 - 128 characters)");
   var possibleCharacters = []; 
   var password2 = "";
   var randomIndex;
   var randomChar;
 
-  //start - handle lowercase
   var hasLowercase = confirm("include lower case letters?");
   if (hasLowercase){
     var lowercases = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(",");  //[a, b, c, d, ...]
@@ -29,7 +28,6 @@ function generatePassword() {
     password2 = password2 + randomChar;
   }
 
-    //end - handle lowercase
     var hasUppercase = confirm("include upper case letters?");
   if (hasUppercase){
     var uppercases = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(","); //[a, b, c, d, ...]
@@ -39,49 +37,37 @@ function generatePassword() {
     password2 = password2 + randomChar;
   }
 
-      //is there a faster way to add an array of numbers? // am I adding 52 numbers here? 
+      
     
       var hasNumbers =  confirm("include numbers?");
       if (hasNumbers){
-      var hasNumbers = "1,2,3,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18.19.20,21,22,23,24,25,26,27,28,29,30,".split(",");
-      possibleCharacters = possibleCharacters.concat(hasNumbers);
-      randomIndex = Math.floor(Math.random() * hasNumbers.length); //0.1234 * 100 = 12.34
-      randomChar = hasNumbers[randomIndex];
+      var numbersArray = "0,1,2,3,3,4,5,6,7,8,9".split(",");
+      possibleCharacters = possibleCharacters.concat(numbersArray);
+      randomIndex = Math.floor(Math.random() * numbersArray.length); //0.1234 * 100 = 12.34
+      randomChar = numbersArray[randomIndex];
       password2 = password2 + randomChar;
      }
 
      var hasSpecialcharacters =  confirm("include special characters?");
      if (hasSpecialcharacters){
-     var hasSpecialcharacters = "1,2,3,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18.19.20,21,22,23,24,25,26,27,28,29,30,".split(",");
-     possibleCharacters = possibleCharacters.concat(hasSpecialcharacters);
-     randomIndex = Math.floor(Math.random() * hasSpecialcharacters.length); //0.1234 * 100 = 12.34
-     randomChar = hasSpecialcharacters[randomIndex];
+     var specialCharacters = "!,@,#,$,%,^,&,*,(,),+".split(",");
+     possibleCharacters = possibleCharacters.concat(specialCharacters);
+     randomIndex = Math.floor(Math.random() * specialCharacters.length); //0.1234 * 100 = 12.34
+     randomChar = specialCharacters[randomIndex];
      password2 = password2 + randomChar;
+     }
 
-
-
-
-
-
-
-
-     
-
+     for (var i = password2.length; i < passwordLength; i++) { 
+      randomIndex = Math.floor(Math.random() * possibleCharacters.length);
+      randomChar = possibleCharacters[randomIndex];
+      password2 = password2 + randomChar;
+    }
 
 
 
 
     return password2;
 
-  }
-    // will add block of code for special characters tomorrow
-    // will also attempt to do for loop
-    //start - handle uppercase
 
-    //end - handle uppercase
-
-
-    //do for loop to fill in rest of characters in password2
-
-
+    
   }
