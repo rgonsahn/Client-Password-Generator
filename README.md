@@ -19,22 +19,14 @@
 
 
 
-
-
-
-
-
-
-
-
 ## Installation 
-    Follow the link to access the repository [website link](https://github.com/rgonsahn/Clientpassword) 
+    Follow the link to access the repository 
     Get SSH Key 
     Perform git clone command to local repository
     An alternative is to access the password generator by follow the url below: 
-   
+[website link](https://rgonsahn.github.io/Clientpassword/Develop/)
+    
  
-
-
-
-    The generator should appear (see image)
+The generator should appear (see image)
+![passwordGenerator](Develop/passwordGenerator.png) 
+   
