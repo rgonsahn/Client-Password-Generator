@@ -33,5 +33,8 @@
     Perform git clone command to local repository
     An alternative is to access the password generator by follow the url below: 
    [ website link](https://rgonsahn.github.io/Clientpassword/)
+    ![passwordGenerator](Clientpassword/Develop/Screen Shot 2022-07-25 at 4.10.01 PM.png "aPasswordGenerator")
+
+
 
     The generator should appear (see image)
